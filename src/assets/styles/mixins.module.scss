@@ -1,0 +1,24 @@
+@mixin fontSize($sizeValue) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 16) + rem;
+ }
+
+ @mixin scrollbar(
+  $bg-color-thumb: rgb(38, 194, 206),
+  $bg-color-scrollbar: transparent,
+  $width: 4px
+) {
+  /* Works on Chrome, Edge, and Safari */
+  &::-webkit-scrollbar {
+    width: $width;
+    background-color: $bg-color-scrollbar;
+    border-radius: 24px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $bg-color-thumb;
+    border-radius: 24px;
+  }
+  /* Works on Firefox */
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: $bg-color-thumb $bg-color-scrollbar; /* scroll thumb and track */
+}

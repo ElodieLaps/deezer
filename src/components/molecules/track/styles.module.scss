@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables.module.scss";
+@import "../../../assets/styles/mixins.module.scss";
+
+.track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 248px;
+
+  &__title {
+    display: flex;
+    gap: 8px;
+  }
+  &__track_title {
+    @include fontSize(16);
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__artist_title {
+    font-weight: bold;
+    &:hover {
+      font-weight: bolder;
+    }
+  }
+
+  &__image {
+    border-radius: 8px;
+  }
+
+  @media (min-width: 678px) {
+  }
+}
