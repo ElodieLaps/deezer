@@ -22,6 +22,12 @@
       "@/utils/*": ["utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/api/search"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/api/search",
+    "src/context/searchContext"
+  ],
   "exclude": ["node_modules"]
 }

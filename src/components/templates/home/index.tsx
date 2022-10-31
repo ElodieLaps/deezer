@@ -1,11 +1,24 @@
 import axios from "axios";
+import { ActionTypeEnum, useSearch } from "context/searchContext";
 import { debounce } from "lodash";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import View from "./view";
 
 const HomeTemplate = () => {
+  const { dispatch } = useSearch();
   const [keyword, setKeyword] = useState("");
   const [searchResult, setSearchResult] = useState([]);
+
+  useEffect(() => {
+    if (window === undefined) {
+      throw new Error("Window must be ready");
+    }
+    const localStorageSearch = window.localStorage.getItem("keyword") ?? null;
+    if (localStorageSearch) {
+      const { keyword: storedKeyword } = JSON.parse(localStorageSearch);
+      setKeyword(storedKeyword || "");
+    }
+  }, []);
 
   const handleChange = (value: string) => {
     setKeyword(value);
@@ -24,15 +37,16 @@ const HomeTemplate = () => {
             return;
           }
           fetchResult();
+          dispatch({ type: ActionTypeEnum.SET_KEYWORD, payload: { keyword } });
         },
         300,
         { maxWait: 1000 }
       ),
-    [fetchResult, keyword]
+    [dispatch, fetchResult, keyword]
   );
 
   useEffect(() => {
-    if (keyword.length > 2) {
+    if (keyword?.length > 2) {
       debounceSearch();
     }
     return debounceSearch.cancel;

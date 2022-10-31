@@ -19,7 +19,6 @@ type ArtistProps = {
 }
 
 const Artist = ({ artist }: ArtistProps) => {
-  console.log("artist", artist);
   return (
     <div className="artist">
       <ArtistTemplate artist={artist} />

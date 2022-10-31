@@ -2,18 +2,16 @@
 @import "../../../assets/styles/mixins.module.scss";
 
 .list {
-  margin-top: 16px;
   display: flex;
   gap: 16px;
   overflow: auto;
   @include scrollbar(transparent, transparent, 0);
-
+  padding: 8px;
 
   &__item {
     padding: 8px;
     border-radius: 8px;
     border: 1px solid white;
-    margin: 0px 16px;
   }
 
   @media (min-width: 678px) {

@@ -1,10 +1,14 @@
 import HomeTemplate from "@/components/templates/home";
+import { SearchProvider } from "context/searchContext";
 import { NextPage } from "next";
 
 const Home: NextPage = () => {
   return (
     <div className="home">
-      <HomeTemplate />
+      <SearchProvider>
+        <HomeTemplate />
+      </SearchProvider>
+      
     </div>
   );
 };

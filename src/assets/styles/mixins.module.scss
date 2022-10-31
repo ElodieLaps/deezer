@@ -4,13 +4,13 @@
  }
 
  @mixin scrollbar(
-  $bg-color-thumb: rgb(38, 194, 206),
+  $bg-color-thumb: rgba(131, 58, 180, 1),
   $bg-color-scrollbar: transparent,
-  $width: 4px
+  $height: 4px
 ) {
   /* Works on Chrome, Edge, and Safari */
   &::-webkit-scrollbar {
-    width: $width;
+    height: $height;
     background-color: $bg-color-scrollbar;
     border-radius: 24px;
   }

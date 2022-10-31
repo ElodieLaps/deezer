@@ -6,7 +6,6 @@ import styles from "./styles.module.scss";
 type ViewProps = TrackProps;
 
 const View = ({ track }: ViewProps) => {
-  console.log("track", track);
   return (
     <div className={`track track-${track.title} ${styles.track}`}>
       <Link href={`/artiste/${track.artist.id}`}>

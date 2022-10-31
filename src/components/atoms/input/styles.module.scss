@@ -9,7 +9,7 @@
   line-height: 21px;
   border: 1px solid #fff3b2;
   width: 100%;
-  color: rgba(255, 30, 210, 0.567);
+  color: white;
   box-shadow: $shadow-regular;
   background-color: rgba(242, 242, 242, 0.5);
   font-weight: $font-bold;
@@ -28,6 +28,6 @@
   &::placeholder {
     @include fontSize(16);
     font-style: italic;
-    color: #ff8080;
+    color: white;
   }
 }
